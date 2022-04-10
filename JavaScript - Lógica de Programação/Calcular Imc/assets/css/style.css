@@ -2,6 +2,8 @@
 :root {
   --primary-color: rgb(17, 86, 102);
   --primary-color-darker: rgb(9, 48, 56);
+  --primary-color-transparent: rgba(17, 86, 102, 0.521);
+  --primary-color-transparent-plus: rgba(17, 86, 102, 0);
 }
 
 * {
@@ -12,7 +14,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: var(--primary-color);
+  background-image: linear-gradient(to bottom, var(--primary-color-darker), var(--primary-color));
   font-family: 'Open sans', sans-serif;
   font-size: 1.3em;
   line-height: 1.5em;
@@ -26,14 +28,37 @@ body {
   border-radius: 10px;
 }
 
-div#imc, div#resultado{
+header h1{
+  text-align: center;
+  background-image: linear-gradient(to bottom, var(--primary-color), var(--primary-color-transparent));
+
+  margin: -15px;
+  margin-bottom: 10px;
+  padding: 20px;
+
+  border-radius: 10px 10px 0px 0px;
+
+  color: #fff;
+}
+
+section#tabela-classificacao{
+  background-image: linear-gradient(to bottom, var(--primary-color-transparent), var(--primary-color-transparent-plus));
+  margin: 0px -15px;
+  padding: 20px;
+}
+
+section#tabela-classificacao h2{
+  color: rgba(255, 255, 255, 0.623);
+}
+
+div#tabela-imc, div#tabela-resultado{
   display: inline-block;
   font-size: 0.75em;
   line-height: 1.9em;
   margin: 0px;
 }
 
-div#imc{
+div#tabela-imc{
   width: 54%;
 }
 
@@ -66,4 +91,14 @@ form button {
 
 form button:hover {
   background: var(--primary-color-darker);
+}
+
+.paragrafo-resultado{
+  background-color: rgb(132, 255, 148);
+  padding: 10px 20px;
+}
+
+.incorrect{
+  background-color: rgb(255, 139, 139);
+  padding: 10px 20px;
 }
